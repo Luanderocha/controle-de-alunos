@@ -1,1 +1,1 @@
-# Fronend Controle de alunos
+# Frontend Controle de alunos
