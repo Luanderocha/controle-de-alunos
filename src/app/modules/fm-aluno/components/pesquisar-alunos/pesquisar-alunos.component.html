@@ -1,0 +1,52 @@
+<div>
+    <br>
+    <br>
+</div>
+<div class="col-mb-3 text-center">
+    <div class="row text-center">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <label>
+                <h5 style="text-align: justify">
+                    Pesquisar Alunos
+                </h5>
+            </label>
+        </div>
+        <div class="col-md-4">
+            <input class="form-control" placeholder="nome">
+        </div>
+        <div class="col-md-2">
+            <button type="button" class="btn btn-secondary">Pesquisar</button>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+<div>
+    <br>
+</div>
+<div class="col-mb-3">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Matrícula</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Turma</th>
+                        <th scope="col">sala</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let aluno of listaAlunos">
+                    <tr>
+                        <th scope="row">{{aluno.matricula}}</th>
+                        <td>{{aluno.nome}}</td>
+                        <td>{{aluno.turma}}</td>
+                        <td>{{aluno.sala}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
