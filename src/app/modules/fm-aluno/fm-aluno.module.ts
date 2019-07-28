@@ -9,7 +9,7 @@ import { FmAlunosService } from './services/fm-alunos.service';
 @NgModule({
   declarations: [CadastrarAlunoComponent, PesquisarAlunosComponent],
   imports: [
-    CommonModule
+    CommonModule,
   ], providers: [ FmAlunosService ]
 })
 export class FmAlunoModule { }
