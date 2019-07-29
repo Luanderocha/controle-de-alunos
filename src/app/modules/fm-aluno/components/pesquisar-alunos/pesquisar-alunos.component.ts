@@ -23,13 +23,12 @@ export class PesquisarAlunosComponent implements OnInit {
   ngOnInit() {
     this.criarFormAluno();
     this.recuperarListaAlunos();
-
   }
 
   criarFormAluno() {
     this.formAluno = this.formBuilder.group(
       {
-        aluno: [null],
+        aluno: [],
       }
     )
   }
@@ -44,20 +43,14 @@ export class PesquisarAlunosComponent implements OnInit {
   pesquisarAluno() {
     const aluno = this.formAluno.get('aluno').value
     const id = this.listaAlunos.getValue().find(res => res.nome === aluno).id;
-    if (id) {
-      this.alunoService.recuperarAlunoId(id).subscribe(
-        res => {
-          const aluno = res
-          this.listaAlunos.next([aluno]);
-        }
-      );
-    }
-    else {
-      this.alunoService.recuperarAlunos().subscribe(
-        res => this.listaAlunos.next(res)
-      );
-    }
+    this.alunoService.recuperarAlunoId(id).subscribe(
+      res => {
+        const aluno = res
+        this.listaAlunos.next([aluno]);
+      }
+    );
   }
+
 
   cadastrarAluno() {
     this.router.navigateByUrl('/cadastrar-alunos');
@@ -67,8 +60,9 @@ export class PesquisarAlunosComponent implements OnInit {
     this.router.navigateByUrl('');
   }
 
-  deletarAlunoId() {
-
+  deletarAlunoId(aluno: ListarAlunosDto) {
+    const id = aluno.id;
+    this.alunoService.deletarAlunoId(id).subscribe();
   }
 
 }

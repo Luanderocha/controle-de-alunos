@@ -17,11 +17,15 @@ export class FmAlunosService {
     }
 
     recuperarAlunoId(id : number){
-      return this.http.get<ListarAlunosDto>(`${environment.apiUrl}/alunos/id?id=${id}` );
+      return this.http.get<ListarAlunosDto>(`${environment.apiUrl}/alunos/id?id=${id}`);
     }
 
     cadastrarAluno(aluno : ListarAlunosDto): Observable<ListarAlunosDto>{
       return this.http.post<ListarAlunosDto>(`${environment.apiUrl}/alunos/`, aluno).pipe();
+    }
+
+    deletarAlunoId(id : number){
+      return this.http.delete<ListarAlunosDto>(`${environment.apiUrl}/alunos/id?id=${id}`).pipe();
     }
 
 }

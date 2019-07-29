@@ -1,7 +1,7 @@
 <form [formGroup]="formAluno">
     <div class="col-mb-3 text-center">
         <div class="row">
-            <div class="col-md-6 text-right" >
+            <div class="col-md-6 text-right">
                 <button type="button" class="btn btn-secondary" (click)="cadastrarAluno()">Cadastrar Aluno</button>
             </div>
             <div class="col-md-6 text-left">
@@ -43,6 +43,7 @@
                             <th scope="col">Matrícula</th>
                             <th scope="col">Nome</th>
                             <th scope="col">e-mail</th>
+                            <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody *ngFor="let aluno of listaAlunos | async">
@@ -50,7 +51,7 @@
                             <th scope="row">{{aluno.id}}</th>
                             <td>{{aluno.nome}}</td>
                             <td>{{aluno.email}}</td>
-
+                            <td><button class="btn btn-outline-danger" (click)="deletarAlunoId(aluno)">X</button></td>
                         </tr>
                     </tbody>
                 </table>

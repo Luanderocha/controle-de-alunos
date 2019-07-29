@@ -36,7 +36,6 @@ export class CadastrarAlunoComponent implements OnInit {
     const salvar = this.formCadastroAluno.getRawValue();
     this.alunoService.cadastrarAluno(salvar).subscribe();
     this.formCadastroAluno.reset();
-    this.router.navigateByUrl('/pesquisar-alunos')
   }
 
   voltarTelaPesquisa() {
