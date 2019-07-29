@@ -3,8 +3,8 @@ export class ListarAlunosDto {
     email: String;
     cpf: number;
     rg: number;
-    matricula: number;
-    data: String;
+    matricula?: number;
+    data?: String;
     genero: String;
-    id: number;
+    id?: number;
 }
