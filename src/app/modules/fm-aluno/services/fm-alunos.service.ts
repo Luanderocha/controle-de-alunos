@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ListarAlunosDto } from '../models/listar-alunos-dto-model';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class FmAlunosService {
@@ -9,8 +11,8 @@ export class FmAlunosService {
     private http: HttpClient
   ) { }
 
-    recuperarAlunos(): Observable<String[]>{
-      return this.http.get<String[]>('localhost:8081/api/alunos');
+    recuperarAlunos(): Observable<ListarAlunosDto[]>{
+      return this.http.get<ListarAlunosDto[]>(`${environment.apiUrl}alunos`);
     }
 
 }

@@ -33,16 +33,15 @@
                     <tr>
                         <th scope="col">Matrícula</th>
                         <th scope="col">Nome</th>
-                        <th scope="col">Turma</th>
-                        <th scope="col">sala</th>
+                        <th scope="col">e-mail</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let aluno of listaAlunos">
+                <tbody *ngFor="let aluno of listaAlunos | async">
                     <tr>
                         <th scope="row">{{aluno.matricula}}</th>
                         <td>{{aluno.nome}}</td>
-                        <td>{{aluno.turma}}</td>
-                        <td>{{aluno.sala}}</td>
+                        <td>{{aluno.email}}</td>
+    
                     </tr>
                 </tbody>
             </table>

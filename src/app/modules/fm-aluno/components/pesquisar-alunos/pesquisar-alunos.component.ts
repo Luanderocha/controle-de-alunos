@@ -1,3 +1,4 @@
+import { ListarAlunosDto } from './../../models/listar-alunos-dto-model';
 import { FmAlunosService } from './../../services/fm-alunos.service';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
@@ -8,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class PesquisarAlunosComponent implements OnInit {
 
-  listaAlunos: BehaviorSubject<String[]> = new BehaviorSubject([]);
+  listaAlunos: BehaviorSubject<ListarAlunosDto[]> = new BehaviorSubject([]);
 
   constructor(
     private alunoService: FmAlunosService,
@@ -22,7 +23,6 @@ export class PesquisarAlunosComponent implements OnInit {
     this.alunoService.recuperarAlunos().subscribe(
       res => this.listaAlunos.next(res)
     );
-
     console.log(this.listaAlunos);
     
   }

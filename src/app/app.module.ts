@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FmHomeModule } from './modules/fm-home/fm-home.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FmHomeModule } from './modules/fm-home/fm-home.module';
     FmHomeModule,
     FmDisciplinasModule,
     FmSalaModule,
-    FmTurmaModule
+    FmTurmaModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
